@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <ctime>
+#include <cstdlib>
+#include <bits/stdc++.h>
+
+using namespace std;
+int fun(int arr[4][4])
+{
+	int i=0,j=0,temp,count=0,n,k,flag = 1;
+	n=4;
+	
+
+    return count;
+}
+
+int main()
+{
+	int n=4;
+	int arr1[4][4];
+	while(true){
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			arr1[i][j] = rand() % (1000);
+		}
+	}
+
+	cout<<endl;
+		int res1 = fun(arr1);
+		int res2 = fun(arr1);
+		
+		if(res1!=res2)
+		{
+			cout<<"wrong"<<res1 <<" "<<res2<<endl;
+			
+			break;
+		}
+		else
+		{
+			cout<<"ok";
+		}
+	}
+}
