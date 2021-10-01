@@ -1,0 +1,53 @@
+/// USING DFS ///
+
+ vector<int> vec[20];
+ stack<int>stk;
+
+ void DFS(int s,int visited[]){
+ visited[s] = 1;
+ for(int i=0;i<vec[s].size();i++){
+ if(visited[vec[s][i]] == 0){
+ DFS(vec[s][i],visited);
+ }
+ }
+ stk.push(s);
+ }
+
+ int main(){
+
+ int n,m;
+ cin >> n >> m;
+
+ int in_deg[n+1] = {0};
+
+ for(int i=0;i<m;i++){
+ int x,y;
+ cin >> x >> y;
+ vec[x].push_back(y);
+ in_deg[y]++;
+ }
+
+ vector<int> beg;
+
+ for(int i=0;i<n+1;i++){
+ if(vec[i].size()>0){
+ sort(vec[i].begin(),vec[i].end(),greater<int>());
+ }
+ }
+
+ int visited[n+1] = {0};
+
+ for(int i=n;i>0;i--){
+ if(in_deg[i] == 0){
+ if(visited[i] == 0)
+ DFS(i,visited);
+ }
+ }
+ while(stk.size() > 0){
+ cout << stk.top() << " ";
+ stk.pop();
+
+ }
+
+ return 0;
+ }
